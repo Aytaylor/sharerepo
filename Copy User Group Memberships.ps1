@@ -9,8 +9,8 @@
     that the Source User does not. 
 .NOTES
     File Name     : Copy User Group Memberships.ps1
-    Author        : Alex Taylor - aytaylor@crutchfield.com
-    Updated: 11/12/2015
+    Author        : Alex Taylor
+    Updated: 11/12/2017
 #>
 
 # Script to copy group memberships from a source user to a target user.

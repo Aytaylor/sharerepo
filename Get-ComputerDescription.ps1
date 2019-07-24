@@ -6,7 +6,7 @@
     name or you can use a path to a file that contains a list. Do not include quotations.
 .NOTES
     File Name     : Get-ComputerDescriptions.ps1
-    Author        : Alex Taylor aytaylor@crutchfield.com
+    Author        : Alex Taylor
 .EXAMPLE
     Get-ComputerDescription.ps1 -UserFile c:\PClist.txt
 #>

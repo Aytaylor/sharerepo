@@ -25,15 +25,15 @@ at the end of this script (line 63).
 
 # Edit this to be the URL or IP address of the site to launch on login
 
-$Url = “https://www.ups.com/one-to-one/login?returnto=https%3a//www.ups.com/viewbill/invoices%3floc%3den_US&reasonCode=-1&appid=BILLING”
+$Url = “https://www.ups.com”
 
 # Edit this to be the username
 
-$Username=”Crutchfield123”
+$Username=””
 
 # Edit this to the corresponding password
 
-$Password=”N2UPS4Cfield”
+$Password=””
 
 # Edit this to be the path to the executable.  Include the executable file name as well.
 
