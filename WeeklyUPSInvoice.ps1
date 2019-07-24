@@ -5,8 +5,8 @@ Author: Alex Taylor
 Updated: 1/30/2017
 
 .DESCRIPTION
-The script extracts the .zip files (Manually downloaded from https://www.ups.com/viewbill/invoices?loc=en_US saved into the logged in User's Downloads folder) and places the CSV into "\\tank\mis$\ADSI\UPS\UPS Flat Files\".
-The PDF is placed into the same Downloads folder. Both CSV and PDF are archived into "\\tank\mis$\ADSI\UPS\UPS Flat Files Archive - (Current Year).zip". The PDF is automatically attached to an email and sent to Kurt Goodwin.
+The script extracts the .zip files (Manually downloaded from https://www.ups.com/viewbill/invoices?loc=en_US saved into the logged in User's Downloads folder) and places the CSV into "UPS Flat Files".
+The PDF is placed into the same Downloads folder. Both CSV and PDF are archived into "UPS Flat Files Archive - (Current Year).zip". The PDF is automatically attached to an email.
 
 
 .NOTES
@@ -15,8 +15,8 @@ You must edit the $ExtractTargetPDF and $ExtractTargetCSV paths if you intend on
 location.
 
 To-Do: Change path variables to actual paths.
-Actual Path for invoice CSV: \\tank\mis$\ADSI\UPS\UPS Flat Files\
-Actual Path for archival: \\tank\mis$\ADSI\UPS\UPS Flat Files Archive (This directory changes depending on the current year)
+Actual Path for invoice CSV: 
+Actual Path for archival: 
 #> 
 ####################################################################################################################################
 
@@ -38,21 +38,21 @@ Read-Host -Prompt "Download the UPS invoice files, then Press Enter to Continue"
 
 
 #Variables that define target files and destination. This script by default extracts both files to the same location.
-#PDF Folder Invoice_0935XA_*.zip 
-#CSV Folder Invoice_00000935XA_*.zip
-$ExtractTargetPDF = ($home + "\downloads\Invoice_0935XA_*.zip")
-$ExtractTargetCSV = ($home + "\downloads\Invoice_00000935XA_*.zip")
-$ExtractCSVDest = ("\\tank\mis$\ADSI\UPS\UPS Flat Files")
+#PDF Folder Invoice.zip 
+#CSV Folder Invoice.zip
+$ExtractTargetPDF = ($home + "\downloads\Invoice.zip")
+$ExtractTargetCSV = ($home + "\downloads\Invoice.zip")
+$ExtractCSVDest = ("UPS Flat Files")
 $ExtractPDFDest = ($home + "\downloads\")
-$ZipDest = ("\\tank\mis$\ADSI\UPS\UPS Flat Files Archive - 2017.zip")
+$ZipDest = ("UPS Flat Files Archive - 2017.zip")
 
 #Email Variables
-$To = ("Goodwin, Kurt <kgoodwin@crutchfield.com>")
-$From = ("CSGSoftware <csgsoftware@crutchfield.com>")
-$BCC = ("Alex Taylor <aytaylor@crutchfield.com>")
-$Body = ("The entire invoice PDF is attached. Print at your convenience. Please email @ITServices with questions.")
+$To = 
+$From = 
+$BCC = 
+$Body = ("The entire invoice PDF is attached. Print at your convenience. Please email ITServices with questions.")
 $Subject = ("UPS Invoice Attached")
-$PSEmailServer = ("InternalMail.crutchfield.ad.crutchfield.com") 
+$PSEmailServer = ("InternalMail") 
 
 #Checks for a valid path to the Zip file then executes cmdlet if True. This step fails if there are multiple UPS CSV's and PDF's 
 if (test-path -path $ExtractTargetPDF) 
@@ -76,8 +76,8 @@ Else
 	}
 
 #CSV and PDF Variables
-$UpsCSV = "\\tank\mis$\ADSI\UPS\UPS Flat Files\Invoice_00000935XA_*.csv"
-$UpsPDF = ($home + "\downloads\Invoice_0935XA_*.pdf")
+$UpsCSV = "Invoice.csv"
+$UpsPDF = ($home + "\downloads\Invoice.pdf")
 
 #Send to Archive. DO NOT allow any file deletions!
 if (test-path -path $UpsCSV)
