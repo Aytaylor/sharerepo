@@ -1,2 +1,2 @@
-# priv-sharerepo
-Repo for Sharing Code
+# sharerepo
+Public repository for sharing code
