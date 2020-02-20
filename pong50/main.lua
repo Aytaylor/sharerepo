@@ -15,8 +15,6 @@ paddle1 = Paddle(5, 20, 5, 20)
 paddle2 = Paddle(VIRTUAL_WIDTH - 10, VIRTUAL_HEIGHT - 30, 5, 20)
 
 function love.load()
-    --paddle1 = Paddle(5, 20, 5, 20)
-    --paddle2 = Paddle(VIRTUAL_WIDTH - 10, VIRTUAL_HEIGHT - 30, 5, 20)
 
     math.randomseed(os.time())
 
@@ -93,7 +91,7 @@ function love.update(dt)
     -- collision check
     if ball:collides(paddle1) then
         -- deflect ball to the right
-        ball.dx = -ball.dx * 1.03
+        ball.dx = -ball.dx * 1.09
 
         sounds['paddle_hit']:play()
     end
@@ -168,7 +166,7 @@ function love.draw()
     love.graphics.clear(40 /255, 45 /255 , 52 / 255, 255 / 255)
 
     love.graphics.setFont(smallFont)
-    love.graphics.print("Ball: " .. ball.y .. " Paddle: " .. paddle2.y)
+
     -- print text based on gameState
     if gameState == 'start' then
         love.graphics.printf("Welcome to Pong! Use W and S to move the left paddle", 0, 20, VIRTUAL_WIDTH, 'center')
